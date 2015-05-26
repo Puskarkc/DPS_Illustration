@@ -1,0 +1,520 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9A1CDC78-B37B-429F-BE23-EEB74D372093}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Manage_Data</RootNamespace>
+    <AssemblyName>DPS ILLUSTRATION</AssemblyName>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <ManifestCertificateThumbprint>1460634C8B493A9E03BF287C4617A4FD4A228660</ManifestCertificateThumbprint>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>true</SignManifests>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+    <TargetZone>LocalIntranet</TargetZone>
+    <SignAssembly>true</SignAssembly>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <DelaySign>false</DelaySign>
+    <ExcludedPermissions>
+    </ExcludedPermissions>
+    <PublishUrl>D:\NEPAL_ILLUSTRATION\NEPAL_PUBLISH\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>74</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Windows\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Analysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Analysis.Designer.cs">
+      <DependentUpon>Analysis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessClass\BAL.cs" />
+    <Compile Include="BRONZE.cs">
+      <DependentUpon>BRONZE.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="BRONZE_Bangla.cs">
+      <DependentUpon>BRONZE_Bangla.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="BRONZE_Bangla_id.cs">
+      <DependentUpon>BRONZE_Bangla_id.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="BRONZE_Bangla_id2.cs">
+      <DependentUpon>BRONZE_Bangla_id2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="SILVER_Nepali_id3.cs">
+      <DependentUpon>SILVER_Nepali_id3.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="illustrationDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>illustrationDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SILVER_Bangla_id3.cs">
+      <DependentUpon>SILVER_Bangla_id3.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="MT.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MT.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Illustration1DataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Illustration1DataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Illustration1DataSet4.cs">
+      <DependentUpon>Illustration1DataSet4.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Illustration1DataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Illustration1DataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportContainer.Designer.cs">
+      <DependentUpon>ReportContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBConn.cs" />
+    <Compile Include="DPS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DPS.Designer.cs">
+      <DependentUpon>DPS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTest.Designer.cs">
+      <DependentUpon>frmTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Illustration1DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Illustration1DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Illustration1DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Illustration1DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Illustration1DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Illustration1DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="myCustomClasses.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Analysis.resx">
+      <DependentUpon>Analysis.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BRONZE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BRONZE.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BRONZE_Bangla.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BRONZE_Bangla.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BRONZE_Bangla_id.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BRONZE_Bangla_id.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BRONZE_Bangla_id2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BRONZE_Bangla_id2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SILVER_Nepali_id3.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SILVER_Nepali_id3.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SILVER_Bangla_id3.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SILVER_Bangla_id3.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MT.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportContainer.resx">
+      <DependentUpon>ReportContainer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DPS.resx">
+      <DependentUpon>DPS.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTest.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="StudentDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentDataSet.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Illustration1DataSet.xsc">
+      <DependentUpon>Illustration1DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Illustration1DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Illustration1DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Illustration1DataSet.xss">
+      <DependentUpon>Illustration1DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Illustration1DataSet1.xsc">
+      <DependentUpon>Illustration1DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Illustration1DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Illustration1DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Illustration1DataSet1.xss">
+      <DependentUpon>Illustration1DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Illustration1DataSet2.xsc">
+      <DependentUpon>Illustration1DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Illustration1DataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Illustration1DataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Illustration1DataSet2.xss">
+      <DependentUpon>Illustration1DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="StudentDataSet.xsc">
+      <DependentUpon>StudentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StudentDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudentDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StudentDataSet.xss">
+      <DependentUpon>StudentDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="BusinessObjects.CrystalReports.10.5">
+      <Visible>False</Visible>
+      <ProductName>Crystal Reports Basic for Visual Studio 2008 %28x86, x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.3.5">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="illustration.sdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Illustration1.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Address.bmp" />
+    <Content Include="Resources\Archive.bmp" />
+    <Content Include="Resources\Blue hills.jpg" />
+    <Content Include="Resources\blueheader.bmp" />
+    <Content Include="Resources\ButtonBack.png" />
+    <Content Include="Resources\Calendar24.bmp" />
+    <Content Include="Resources\CloseForm.bmp" />
+    <Content Include="Resources\Contacts24.bmp" />
+    <Content Include="Resources\Copy.bmp" />
+    <Content Include="Resources\Cut.bmp" />
+    <Content Include="Resources\DBL.bmp" />
+    <Content Include="Resources\DBLmain.bmp" />
+    <Content Include="Resources\DBLmain1.bmp" />
+    <Content Include="Resources\dbm.bmp" />
+    <Content Include="Resources\Delete.bmp" />
+    <Content Include="Resources\Download.bmp" />
+    <Content Include="Resources\Drafts.bmp" />
+    <Content Include="Resources\Error.bmp" />
+    <Content Include="Resources\FEditAccess.bmp" />
+    <Content Include="Resources\Find.bmp" />
+    <Content Include="Resources\Flag.bmp" />
+    <Content Include="Resources\fnoaccess.bmp" />
+    <Content Include="Resources\Folder.bmp" />
+    <Content Include="Resources\Folder24.bmp" />
+    <Content Include="Resources\Forward.bmp" />
+    <Content Include="Resources\FReadAccess.bmp" />
+    <Content Include="Resources\Help.bmp" />
+    <Content Include="Resources\icon.jpg" />
+    <Content Include="Resources\icon1.jpg" />
+    <Content Include="Resources\Inbox.bmp" />
+    <Content Include="Resources\InternetFax.bmp" />
+    <Content Include="Resources\JournalEntry.bmp" />
+    <Content Include="Resources\Junk.bmp" />
+    <Content Include="Resources\Mail24.bmp" />
+    <Content Include="Resources\Metlife_Alico.JPG" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="illustrationDataSet.xsc">
+      <DependentUpon>illustrationDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="illustrationDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>illustrationDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="illustrationDataSet.xss">
+      <DependentUpon>illustrationDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\app.manifest" />
+    <None Include="Resources\Metlife_Alico1.jpg" />
+    <None Include="Resources\Metlife_New_only.PNG" />
+    <Content Include="Resources\Minimize.bmp" />
+    <Content Include="Resources\Move.bmp" />
+    <Content Include="Resources\New.bmp" />
+    <Content Include="Resources\New.png" />
+    <Content Include="Resources\NewAppointment.bmp" />
+    <Content Include="Resources\NewContact.bmp" />
+    <Content Include="Resources\NewDistributionList.bmp" />
+    <Content Include="Resources\NewFolder.bmp" />
+    <Content Include="Resources\NewMeetingRequest.bmp" />
+    <Content Include="Resources\NewSearchFolder.bmp" />
+    <Content Include="Resources\NewTask.bmp" />
+    <Content Include="Resources\Notes.bmp" />
+    <Content Include="Resources\Notes32.bmp" />
+    <Content Include="Resources\Outbox.bmp" />
+    <Content Include="Resources\Outlook.bmp" />
+    <Content Include="Resources\OutlookToday.bmp" />
+    <Content Include="Resources\Paste.bmp" />
+    <Content Include="Resources\Post.bmp" />
+    <Content Include="Resources\Post.png" />
+    <Content Include="Resources\Print.bmp" />
+    <Content Include="Resources\PrintPreview.bmp" />
+    <Content Include="Resources\ProgressImage.gif" />
+    <Content Include="Resources\Read.bmp" />
+    <Content Include="Resources\Read.gif" />
+    <Content Include="Resources\Recycle.bmp" />
+    <Content Include="Resources\Reply.bmp" />
+    <Content Include="Resources\ReplyAll.bmp" />
+    <Content Include="Resources\Rule.bmp" />
+    <None Include="Illustration1DataSet3.xsc">
+      <DependentUpon>Illustration1DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="Illustration1DataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Illustration1DataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Illustration1DataSet3.xss">
+      <DependentUpon>Illustration1DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="Illustration1DataSet4.xsc">
+      <DependentUpon>Illustration1DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="Illustration1DataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Illustration1DataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Illustration1DataSet4.xss">
+      <DependentUpon>Illustration1DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="Manage Data_TemporaryKey.pfx" />
+    <None Include="Resources\savings_evergreen.jpg" />
+    <Content Include="Resources\Search.bmp" />
+    <Content Include="Resources\Send.bmp" />
+    <Content Include="Resources\Sent.bmp" />
+    <Content Include="Resources\Shortcut.bmp" />
+    <Content Include="Resources\Shortcut24.bmp" />
+    <Content Include="Resources\SyncError.bmp" />
+    <Content Include="Resources\Task.bmp" />
+    <Content Include="Resources\TaskRequest.bmp" />
+    <Content Include="Resources\Tasks24.bmp" />
+    <Content Include="Resources\TitleBarGrip.bmp" />
+    <Content Include="Resources\Unread.gif" />
+    <Content Include="Student.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ADODB">
+      <Guid>{B691E011-1797-432E-907A-4D8C69339129}</Guid>
+      <VersionMajor>6</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="JRO">
+      <Guid>{AC3B8B4C-B6CA-11D1-9F31-00C04FC29D52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reports\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
